@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "t_user_detail")
@@ -18,7 +19,7 @@ public class UserDetail {
     private long id;
     private String firstName;
     private String lastName;
-    private String birthDate;
+    private Date birthDate;
     @OneToOne
     @PrimaryKeyJoinColumn
     private User user;
