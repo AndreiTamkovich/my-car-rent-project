@@ -10,6 +10,18 @@
 </h1>
 <p style="margin-left: 50px;"> Учебный проект студента ит-академии. Тема проекта - букинг-сервис аренды автомобилей.
     Используемые технологии:
+    <br>
+    - Java 11
+    <br>
+    - Spring boot
+    <br>
+    - Hibernate (в составе spring-boot-data-starter-data-jpa)
+    <br>
+    - Maven
+    <br>
+    - Git
+    <br>
+    - H2 Реляционная БД
 </p>
 </body>
 </html>
