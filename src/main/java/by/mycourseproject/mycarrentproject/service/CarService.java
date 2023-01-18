@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class CarService {
@@ -14,6 +16,7 @@ public class CarService {
 
     public void addCar(@RequestBody CarDto carDto) {
         Car newCar = new Car();
+        newCar.setMark(carDto.getMark());
         newCar.setRentalPrice(carDto.getRentalPrice());
         newCar.setModel(carDto.getModel());
         newCar.setType(carDto.getType());
@@ -22,5 +25,9 @@ public class CarService {
         newCar.setFuel(carDto.getFuel());
         newCar.setStatus(carDto.getStatus());
         carRepository.save(newCar);
+    }
+
+    public List<Car> findAllCars() {
+        return (List<Car>) carRepository.findAll();
     }
 }

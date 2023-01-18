@@ -14,4 +14,18 @@ public class CarDto {
     private String color;
     private String fuel;
     private String status;
+
+    @Override
+    public String toString() {
+        return "CarDto{" +
+               "mark='" + mark + '\'' +
+               ", rentalPrice=" + rentalPrice +
+               ", model='" + model + '\'' +
+               ", type='" + type + '\'' +
+               ", yearOfIssue=" + yearOfIssue +
+               ", color='" + color + '\'' +
+               ", fuel='" + fuel + '\'' +
+               ", status='" + status + '\'' +
+               '}';
+    }
 }

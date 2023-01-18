@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -17,14 +20,29 @@ public class CarController {
 
     @GetMapping("/add-a-car")
     public String showAddACarPage() {
-        System.out.println("Call add a car page");
+        System.out.println("Call add car page");
         return "add-a-car";
+    }
+
+    @GetMapping("/view-cars")
+    public String showAllCarsPage() {
+        System.out.println("Call show all car page");
+        return "view-cars";
     }
 
     @PostMapping(consumes = "application/x-www-form-urlencoded;charset=UTF-8")
     @RequestMapping("/add-a-car")
-    public String addCar(@RequestBody CarDto body) {
+    public String addCar(CarDto body) {
+        System.out.println("Add car:" + body.toString());
         carService.addCar(body);
         return "redirect:/welcome";
     }
+
+/*    @GetMapping("/view-cars")
+    public ModelAndView showAllCars() {
+        return new ModelAndView(
+                "view-cars",
+                Map.of("cars", carService.findAllCars())
+        );
+    }*/
 }
