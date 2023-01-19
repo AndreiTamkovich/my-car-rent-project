@@ -6,4 +6,4 @@ VALUES (2, 'Peugeot', 69.99, '407', 'Coupe', 2010, 'Blue', 'Diesel', 'Enable');
 
 ---Users---
 INSERT INTO t_user (id, login, password, email, role)
-VALUES (1,'root','root','root@example.com','ADMIN')
+VALUES (1,'root','root','root@example.com','ADMIN');
