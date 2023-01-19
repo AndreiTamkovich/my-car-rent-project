@@ -29,7 +29,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/view-cars">View cars</a></li>
                         <li><a class="dropdown-item" href="/add-a-car">Add a car</a></li>
-                        <li><a class="dropdown-item" href="/edit-a-car">Edit a car</a></li>
+                        <li><a class="dropdown-item" href="/edit-or-delete-a-car">Edit or delete a car</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -39,7 +39,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/view-users">View users</a></li>
                         <li><a class="dropdown-item" href="/add-a-user">Add a user</a></li>
-                        <li><a class="dropdown-item" href="/edit-a-user">Edit a user</a></li>
+                        <li><a class="dropdown-item" href="/edit-or-delete-a-user">Edit or delete a user</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -49,7 +49,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/view-orders">View orders</a></li>
                         <li><a class="dropdown-item" href="/add-a-order">Edit a payment</a></li>
-                        <li><a class="dropdown-item" href="/edit-a-order">Edit a order</a></li>
+                        <li><a class="dropdown-item" href="/edit-or-delete-a-order">Edit or delete a order</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -59,7 +59,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/view-payments">View payments</a></li>
                         <li><a class="dropdown-item" href="/add-a-payment">Add a payment</a></li>
-                        <li><a class="dropdown-item" href="/edit-a-order">Edit a payment</a></li>
+                        <li><a class="dropdown-item" href="/edit-or-delete-a-order">Edit or delete a payment</a></li>
                     </ul>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/login"><span

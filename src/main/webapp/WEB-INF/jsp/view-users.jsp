@@ -5,15 +5,11 @@
     <div style="text-align: center;">View users</div>
 </h1>
 
-<%--<c:if test="${empty cars }">
-    <h3><span style="color: red; ">Failed to find cars</span></h3>
+<%--<c:if test="${empty users }">
+    <h3><span style="color: red; ">Failed to find users</span></h3>
 </c:if>
-<c:if test="${not empty cars }">--%>
+<c:if test="${not empty users }">--%>
 <table style="width:100%" class="table">
-    private String login;
-    private String password;
-    private String email;
-    private String role;
     <tr>
         <th>ID</th>
         <th>Login</th>
