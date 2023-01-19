@@ -48,7 +48,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/view-orders">View orders</a></li>
-                        <li><a class="dropdown-item" href="/add-a-order">Edit a payment</a></li>
+                        <li><a class="dropdown-item" href="/add-a-order">Edit a order</a></li>
                         <li><a class="dropdown-item" href="/edit-or-delete-a-order">Edit or delete a order</a></li>
                     </ul>
                 <li class="nav-item dropdown">
