@@ -48,6 +48,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/view-orders">View orders</a></li>
+                        <li><a class="dropdown-item" href="/add-a-order">Edit a payment</a></li>
                         <li><a class="dropdown-item" href="/edit-a-order">Edit a order</a></li>
                     </ul>
                 <li class="nav-item dropdown">
@@ -56,7 +57,8 @@
                         Payments
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/view-orders">View payments</a></li>
+                        <li><a class="dropdown-item" href="/view-payments">View payments</a></li>
+                        <li><a class="dropdown-item" href="/add-a-payment">Add a payment</a></li>
                         <li><a class="dropdown-item" href="/edit-a-order">Edit a payment</a></li>
                     </ul>
                 <li class="nav-item">

@@ -35,7 +35,7 @@ public class CarController {
     public String addCar(CarDto body) {
         System.out.println("Add car:" + body.toString());
         carService.addCar(body);
-        return "redirect:/welcome";
+        return "redirect:/successfully";
     }
 
 /*    @GetMapping("/view-cars")

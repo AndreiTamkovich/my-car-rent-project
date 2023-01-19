@@ -10,5 +10,10 @@ public class HelloPageController {
         System.out.println("Call Hellopage");
         return "hellopage";
     }
+    @GetMapping("/successfully")
+    public String successPage() {
+        System.out.println("Call success page");
+        return "successfully";
+    }
 }
 
