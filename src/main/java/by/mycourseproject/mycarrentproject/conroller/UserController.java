@@ -28,6 +28,11 @@ public class UserController {
         return "view-users";
     }
 
+    @GetMapping("/delete-a-user")
+    public String showDeleteUserPageById() {
+        return "delete-a-user";
+    }
+
     @PostMapping
     @RequestMapping("/add-a-user")
     public String addUser(UserDto body) {
@@ -35,6 +40,15 @@ public class UserController {
         userService.addUser(body);
         return "redirect:/successfully";
     }
+
+
+    @PostMapping
+    @RequestMapping("/delete-a-user")
+    public String deleteUser(Long id) {
+        userService.deleteUder(id);
+        return "redirect:/successfully";
+    }
+
 
 /*    @GetMapping("/view-users")
     public ModelAndView showAllCars() {

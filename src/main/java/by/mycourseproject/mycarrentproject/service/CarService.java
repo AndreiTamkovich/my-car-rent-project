@@ -27,7 +27,13 @@ public class CarService {
         carRepository.save(newCar);
     }
 
+    public void deleteCar(@RequestBody Long id) {
+        carRepository.deleteById(id);
+    }
+
     public List<Car> findAllCars() {
         return (List<Car>) carRepository.findAll();
     }
+
+
 }

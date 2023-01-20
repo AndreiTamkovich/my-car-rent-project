@@ -23,6 +23,10 @@ public class PaymentService {
         paymentRepository.save(newPayment);
     }
 
+    public void deletePayment(@RequestBody Long id) {
+        paymentRepository.deleteById(id);
+    }
+
     public List<Payment> findAllPayments() {
         return (List<Payment>) paymentRepository.findAll();
     }

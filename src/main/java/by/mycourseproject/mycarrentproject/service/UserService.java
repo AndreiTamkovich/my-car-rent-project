@@ -23,8 +23,13 @@ public class UserService {
         userRepository.save(newUser);
     }
 
+    public void deleteUder(@RequestBody Long id) {
+        userRepository.deleteById(id);
+    }
+
     public List<User> findAllUsers() {
         return (List<User>) userRepository.findAll();
     }
+
 
 }

@@ -2,16 +2,11 @@ package by.mycourseproject.mycarrentproject.conroller;
 
 import by.mycourseproject.mycarrentproject.dto.CarDto;
 import by.mycourseproject.mycarrentproject.service.CarService;
-import com.sun.xml.bind.v2.runtime.output.SAXOutput;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -30,11 +25,24 @@ public class CarController {
         return "view-cars";
     }
 
+    @GetMapping("/delete-a-car")
+    public String showDeleteCarPageById() {
+        return "delete-a-car";
+    }
+
     @PostMapping(consumes = "application/x-www-form-urlencoded;charset=UTF-8")
     @RequestMapping("/add-a-car")
     public String addCar(CarDto body) {
         System.out.println("Add car:" + body.toString());
         carService.addCar(body);
+        return "redirect:/successfully";
+    }
+
+    @PostMapping
+    @RequestMapping("/delete-a-car")
+    public String deleteCar(Long id) {
+        System.out.println("Delete car with id" + id);
+        carService.deleteCar(id);
         return "redirect:/successfully";
     }
 

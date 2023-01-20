@@ -4,16 +4,18 @@
 <h1>
     <div style="text-align: center;">View cars</div>
 </h1>
-<p>Show only enable cars</p>
 <br>
-<p>Show cars by price</p>
+<button type="submit" name="carbyprice" value="/cars-by-price"
+        class="btn btn-light">Show car by price
+</button>
+<br>
+<br>
 
 <%--<c:if test="${empty cars }">
     <h3><span style="color: red; ">Failed to find cars</span></h3>
 </c:if>
 <c:if test="${not empty cars }">--%>
 <table style="width:100%" class="table">
-
     <tr>
         <th>ID</th>
         <th>Mark, model, type</th>
@@ -36,4 +38,7 @@
     </c:forEach>
 </table>
 
+<jsp:include page="_pgn.jsp"/>
+<br>
+<br>
 <jsp:include page="_footer.jsp"/>

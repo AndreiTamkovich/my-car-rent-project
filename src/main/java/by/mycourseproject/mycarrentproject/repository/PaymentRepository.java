@@ -11,4 +11,7 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
     Payment save(Payment payment);
 
     List<Payment> findAll();
+
+    void deleteById(Long id);
+
 }
