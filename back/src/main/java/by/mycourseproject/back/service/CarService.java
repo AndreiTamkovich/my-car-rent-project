@@ -38,14 +38,13 @@ public class CarService {
     }
 
     public List<Car> findAllCars() {
-        return (List<Car>) carRepository.findAll();
+        return  carRepository.findAll();
     }
 
 
     public List<Car> findAllCarsWithPagination(int page, int size) {
         Pageable pagination = PageRequest.of(page, size, Sort.by("id"));
         Page<Car> all = carRepository.findAll(pagination);
-
         return all.getContent();
     }
 }

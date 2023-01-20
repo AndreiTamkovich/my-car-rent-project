@@ -56,8 +56,8 @@ public class CarController {
     }
 
     @GetMapping("/getCarsWithPagination")
-    public ModelAndView showAllCars(@RequestParam(defaultValue = "1") int page,
-                                    @RequestParam int size) {
+    public ModelAndView showAllCars(@RequestParam(defaultValue = "0") int page,
+                                    @RequestParam(defaultValue = "100") int size) {
         List<Car> allCars = carService.findAllCarsWithPagination(page, size);
 
 
