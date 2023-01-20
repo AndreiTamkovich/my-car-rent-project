@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<form method="get" action="/getCarsWithPagination">
 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
     <div class="col-8">
         <div class="btn-group me-2" role="group" aria-label="Previous group">
@@ -64,3 +65,5 @@
         </div>
     </div>
 </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

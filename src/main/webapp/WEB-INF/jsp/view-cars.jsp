@@ -30,7 +30,7 @@
             <td><c:out value="${car.id}"/></td>
             <td><c:out value="${car.mark} ${car.model} ${car.type}"/></td>
             <td><c:out value="${car.rentalPrice}"/></td>
-            <td><c:out value="${car.yearOfIssuer}"/></td>
+            <td><c:out value="${car.yearOfIssue}"/></td>
             <td><c:out value="${car.color}"/></td>
             <td><c:out value="${car.fuel}"/></td>
             <td><c:out value="${car.status}"/></td>

@@ -4,10 +4,16 @@ import by.mycourseproject.back.dto.CarDto;
 import by.mycourseproject.back.entity.Car;
 import by.mycourseproject.back.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -36,4 +42,10 @@ public class CarService {
     }
 
 
+    public List<Car> findAllCarsWithPagination(int page, int size) {
+        Pageable pagination = PageRequest.of(page, size, Sort.by("id"));
+        Page<Car> all = carRepository.findAll(pagination);
+
+        return all.getContent();
+    }
 }
