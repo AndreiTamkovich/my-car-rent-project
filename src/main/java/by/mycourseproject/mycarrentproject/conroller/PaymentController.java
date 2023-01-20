@@ -17,6 +17,7 @@ public class PaymentController {
     public String showAddPaymentPage() {
         System.out.println("Call add a payment page");
         return "add-a-payment";
+
     }
 
     @GetMapping("/view-payments")
