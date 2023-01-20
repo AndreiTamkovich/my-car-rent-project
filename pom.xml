@@ -11,7 +11,7 @@
     <groupId>by.mycourseproject</groupId>
     <artifactId>my-car-rent-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <name>my-car-rent-project</name>
     <description>my-car-rent-project</description>
     <properties>
@@ -68,6 +68,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <mainClass>by.mycourseproject.back.Application</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -78,5 +79,10 @@
             </plugin>
         </plugins>
     </build>
+
+    <modules>
+        <module>back</module>
+        <module>auth</module>
+    </modules>
 
 </project>
