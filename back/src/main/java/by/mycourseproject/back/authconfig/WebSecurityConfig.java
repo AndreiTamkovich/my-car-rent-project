@@ -20,8 +20,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .csrf().disable().cors().disable()
+                .headers().frameOptions().sameOrigin().and()
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
+                .antMatchers("/**").permitAll()
+                .antMatchers("/h2admin/**").permitAll()
                 .antMatchers("/add-a-car").hasRole("ADMIN")
                 .antMatchers("/delete-a-car").hasRole("ADMIN")
                 .antMatchers("/view-cars").hasAnyRole("ADMIN", "USER")
@@ -35,7 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/delete-a-payment").hasRole("ADMIN")
                 .antMatchers("/view-payments").hasAnyRole("ADMIN", "USER")
                 .and()
-                .csrf().disable()
                 .formLogin();
     }
 
