@@ -11,7 +11,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,7 +37,7 @@ public class CarService {
     }
 
     public List<Car> findAllCars() {
-        return  carRepository.findAll();
+        return carRepository.findAll().stream().filter(x -> x.getStatus().equals("ENABLED")).collect(Collectors.toList());
     }
 
 

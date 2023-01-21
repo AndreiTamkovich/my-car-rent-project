@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "t_user")
@@ -19,4 +20,7 @@ public class User {
     private String role;
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private UserDetail userDetail;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<Order> orderList;
 }

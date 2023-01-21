@@ -18,4 +18,8 @@ public class Order {
     private Date dateFrom;
     @OneToOne(mappedBy = "order")
     private Payment payment;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_ID")
+    private User user;
 }

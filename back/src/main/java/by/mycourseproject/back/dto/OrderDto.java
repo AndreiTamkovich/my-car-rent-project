@@ -13,4 +13,5 @@ public class OrderDto {
     private Date dateTo;
     private Date dateFrom;
     private Payment payment;
+    private long carId;
 }
