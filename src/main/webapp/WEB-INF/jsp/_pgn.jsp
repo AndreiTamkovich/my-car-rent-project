@@ -4,11 +4,6 @@
 <form method="get" action="/getCarsWithPagination">
     <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
         <div class="col-8">
-            <%--        <div class="btn-group me-2" role="group" aria-label="Previous group">
-                        <button type="submit" name="page" value="${data.metadata.page > 0 ? data.metadata.page - 1 : 0}"
-                                class="btn btn-light">&laquo;
-                        </button>
-                    </div>--%>
             <div class="btn-group me-2" role="group" aria-label="Page group">
                 <c:choose>
                     <c:when test="${data.metadata.page < 3}">
@@ -20,15 +15,10 @@
                     </c:when>
                     <c:otherwise>
                         <button type="submit" name="page" value="0" class="btn btn-light">First Page</button>
-                        <%--                    <button type="button" aria-disabled="true" class="btn btn-light">...</button>
-                                            <button type="submit" name="page" value="${data.metadata.page - 1}"
-                                                    class="btn btn-light">${data.metadata.page}</button>--%>
                     </c:otherwise>
                 </c:choose>
-                <%-- current page --%>
                 <button type="submit" name="page" value="${data.metadata.page}"
                         class="btn btn-light active">${data.metadata.page + 1}</button>
-                <%-- right pages --%>
                 <c:choose>
                     <c:when test="${data.metadata.page + 3 >= data.metadata.totalPages}">
                         <c:forEach begin="${data.metadata.page + 2}" end="${data.metadata.totalPages}" var="p">
@@ -38,9 +28,6 @@
                     <c:otherwise>
                         <button type="submit" name="page" value="${data.metadata.page + 1}"
                                 class="btn btn-light">${data.metadata.page + 2}</button>
-                        <%--                    <button type="button" aria-disabled="true" class="btn btn-light">...</button>
-                                            <button type="submit" name="page" value="${data.metadata.totalPages - 1}"
-                                                    class="btn btn-light">${data.metadata.totalPages}</button>--%>
                     </c:otherwise>
                 </c:choose>
             </div>
@@ -52,7 +39,6 @@
             </div>
         </div>
         <div class="col-2">
-            <%--size--%>
             <div class="input-group me-2">
                 <div class="input-group-text" id="btnGroupAddon2">Page size:</div>
                 <select class="form-select" name="size" id="validationCustom04" onchange="this.form.submit()">

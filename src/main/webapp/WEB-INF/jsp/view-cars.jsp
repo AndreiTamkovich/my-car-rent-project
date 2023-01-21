@@ -2,21 +2,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="_header.jsp"/>
 <h1>
-    <div style="text-align: center;">View cars</div>
+    <div style="text-align: center;">View enable cars</div>
 </h1>
 <br>
 <form method="get" action="/getCarsWithPaginationByPrice">
     <button type="submit"
-            class="btn btn-light">Show car by price
+            class="btn btn-light">Show all cars by price
     </button>
 </form>
 <br>
 <br>
 
-<%--<c:if test="${empty cars }">
-    <h3><span style="color: red; ">Failed to find cars</span></h3>
-</c:if>
-<c:if test="${not empty cars }">--%>
 <table style="width:100%" class="table">
     <tr>
         <th>ID</th>
