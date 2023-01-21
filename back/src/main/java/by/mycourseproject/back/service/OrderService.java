@@ -3,9 +3,11 @@ package by.mycourseproject.back.service;
 import by.mycourseproject.back.dto.OrderDto;
 import by.mycourseproject.back.entity.Car;
 import by.mycourseproject.back.entity.Order;
+import by.mycourseproject.back.entity.Payment;
 import by.mycourseproject.back.entity.User;
 import by.mycourseproject.back.repository.CarRepository;
 import by.mycourseproject.back.repository.OrderRepository;
+import by.mycourseproject.back.repository.PaymentRepository;
 import by.mycourseproject.back.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -22,6 +24,8 @@ public class OrderService {
 
     private final UserRepository userRepository;
 
+    private final PaymentRepository paymentRepository;
+
 
     public boolean order(OrderDto dto, String userName) {
         boolean res = false;
@@ -36,8 +40,12 @@ public class OrderService {
         order.setDateFrom(dto.getDateFrom());
         order.setDateTo(dto.getDateTo());
         order.setUser(userByLogin);
-        order.setPayment(dto.getPayment());
 
+        Payment byId = paymentRepository.getById(dto.getPaymentId());
+
+        order.setPayment(byId);
+
+        userRepository.save(userByLogin);
         return res;
     }
 

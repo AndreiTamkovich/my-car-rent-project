@@ -11,9 +11,9 @@ public class ContextCreator {
     public String getUserFromAuth() {
         String username = "";
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null) {
+        if (authentication != null && !authentication.getPrincipal().toString().equals("anonymousUser")) {
             JSONObject auth = new JSONObject(authentication.getPrincipal());
-            username =auth.getString("username");
+            username = auth.getString("username");
         }
         return username;
     }

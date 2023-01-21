@@ -49,9 +49,9 @@
                         Orders
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/view-orders">View orders</a></li>
-                        <li><a class="dropdown-item" href="/add-a-order">Edit a order</a></li>
-                        <li><a class="dropdown-item" href="/Delete-a-order">Delete a order</a></li>
+                        <li><a class="dropdown-item" href="/order/view-orders">View orders</a></li>
+                        <li><a class="dropdown-item" href="/order/add-a-order">Add a order</a></li>
+                        <li><a class="dropdown-item" href="/order/Delete-a-order">Delete a order</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

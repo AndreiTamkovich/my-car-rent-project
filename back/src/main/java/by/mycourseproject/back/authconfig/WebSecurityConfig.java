@@ -25,6 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/**").permitAll()
                 .antMatchers("/h2admin/**").permitAll()
+                .antMatchers("/order/**").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/add-a-car").hasRole("ADMIN")
                 .antMatchers("/delete-a-car").hasRole("ADMIN")
                 .antMatchers("/view-cars").hasAnyRole("ADMIN", "USER")

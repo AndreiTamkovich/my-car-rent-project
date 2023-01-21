@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="_header.jsp"/>
-<h1>Add a new user</h1>
+<h1>Add a new payment</h1>
 
 <form method="post" action="/add-a-payment">
 
