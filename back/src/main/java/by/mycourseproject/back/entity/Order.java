@@ -16,8 +16,13 @@ public class Order {
     private long id;
     private Date dateTo;
     private Date dateFrom;
-    @OneToOne(mappedBy = "order")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PAYMENT_ID")
     private Payment payment;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CAR_ID")
+    private Car car;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")

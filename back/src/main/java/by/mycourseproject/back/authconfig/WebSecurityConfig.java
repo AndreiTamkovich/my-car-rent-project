@@ -23,7 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable().cors().disable()
                 .headers().frameOptions().sameOrigin().and()
                 .authorizeRequests()
-                .antMatchers("/**").permitAll()
+                .antMatchers("/").permitAll()
                 .antMatchers("/h2admin/**").permitAll()
                 .antMatchers("/order/**").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/add-a-car").hasRole("ADMIN")

@@ -14,8 +14,12 @@ VALUES (6, 'Volvo', 58.99, 'S40', 'Sedan', 2010, 'White', 'Petrol', 'Enable');
 
 ---Users---
 INSERT INTO t_user (id, login, password, email, role)
-VALUES (1,'root','root','root@example.com','ADMIN');
+VALUES (1, 'root', 'root', 'root@example.com', 'ADMIN');
 INSERT INTO t_user (id, login, password, email, role)
-VALUES (2,'test','test','test@example.com','USER');
+VALUES (2, 'test', 'test', 'test@example.com', 'USER');
 
 ---Payments---
+INSERT INTO t_payment (id, currency, payment_type)
+VALUES (1, 'RUR', 'Cash');
+INSERT INTO t_payment (id, currency, payment_type)
+VALUES (2, 'USD', 'Card');

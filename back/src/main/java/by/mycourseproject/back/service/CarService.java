@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -37,7 +38,7 @@ public class CarService {
     }
 
     public List<Car> findAllCars() {
-        return carRepository.findAll().stream().filter(x -> x.getStatus().equals("ENABLED")).collect(Collectors.toList());
+        return carRepository.findAll().stream().filter(x -> x.getStatus().toUpperCase(Locale.ROOT).equals("ENABLE")).collect(Collectors.toList());
     }
 
 

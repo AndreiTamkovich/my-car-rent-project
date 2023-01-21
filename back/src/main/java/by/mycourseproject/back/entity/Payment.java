@@ -15,6 +15,4 @@ public class Payment {
     private long id;
     private String paymentType;
     private String currency;
-    @OneToOne
-    private Order order;
 }
