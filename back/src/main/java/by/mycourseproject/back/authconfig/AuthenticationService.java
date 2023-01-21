@@ -1,4 +1,4 @@
-package by.mycourseproject.back.configuration;
+package by.mycourseproject.back.authconfig;
 
 import by.mycourseproject.back.repository.UserRepository;
 import by.mycourseproject.back.service.UserService;

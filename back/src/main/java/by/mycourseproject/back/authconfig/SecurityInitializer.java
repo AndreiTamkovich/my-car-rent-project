@@ -1,4 +1,4 @@
-package by.mycourseproject.back.configuration;
+package by.mycourseproject.back.authconfig;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
