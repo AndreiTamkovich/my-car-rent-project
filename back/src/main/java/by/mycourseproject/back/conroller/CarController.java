@@ -66,7 +66,7 @@ public class CarController {
 
     @GetMapping("/getCarsWithPaginationByPrice")
     public ModelAndView showAllCarsByPrice(@RequestParam(defaultValue = "0") int page,
-                                    @RequestParam(defaultValue = "100") int size) {
+                                           @RequestParam(defaultValue = "100") int size) {
         List<Car> allCars = carService.findAllCarsWithPaginationSortByPrice(page, size);
         return new ModelAndView(
                 "view-cars",

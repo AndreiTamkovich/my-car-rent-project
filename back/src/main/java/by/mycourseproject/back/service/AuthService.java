@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AuthService {
     private final UserRepository userRepository;
+
     public boolean loginValidation(UserDto dto) {
 
         User userByLogin = userRepository.getUserByLogin(dto.getLogin());

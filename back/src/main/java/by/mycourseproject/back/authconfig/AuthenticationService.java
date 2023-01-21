@@ -24,7 +24,7 @@ public class AuthenticationService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println("Call: loadUserByUsername");
         try {
-           by.mycourseproject.back.entity.User appUsers = userRepository.getUserByLogin(username);
+            by.mycourseproject.back.entity.User appUsers = userRepository.getUserByLogin(username);
             if (appUsers == null) {
                 throw new UsernameNotFoundException("User not found: " + username);
             }
