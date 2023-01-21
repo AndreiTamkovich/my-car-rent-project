@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -21,9 +24,11 @@ public class UserController {
     }
 
     @GetMapping("/view-users")
-    public String showAllUsersPage() {
-        System.out.println("Call show all users page");
-        return "view-users";
+    public ModelAndView showAllCars() {
+        return new ModelAndView(
+                "view-users",
+                Map.of("users", userService.findAllUsers())
+        );
     }
 
     @GetMapping("/delete-a-user")
@@ -46,13 +51,4 @@ public class UserController {
         userService.deleteUder(id);
         return "redirect:/successfully";
     }
-
-
-/*    @GetMapping("/view-users")
-    public ModelAndView showAllCars() {
-        return new ModelAndView(
-                "view-users",
-                Map.of("users", userService.findAllUsers())
-        );
-}*/
 }

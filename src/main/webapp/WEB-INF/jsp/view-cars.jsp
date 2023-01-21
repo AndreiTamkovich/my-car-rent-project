@@ -5,9 +5,11 @@
     <div style="text-align: center;">View cars</div>
 </h1>
 <br>
-<button type="submit" name="carbyprice" value="/cars-by-price"
-        class="btn btn-light">Show car by price
-</button>
+<form method="get" action="/getCarsWithPaginationByPrice">
+    <button type="submit"
+            class="btn btn-light">Show car by price
+    </button>
+</form>
 <br>
 <br>
 

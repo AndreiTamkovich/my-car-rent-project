@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Map;
 
@@ -31,7 +30,7 @@ public class CarController {
         return "delete-a-car";
     }
 
-    @PostMapping(consumes = "application/x-www-form-urlencoded;charset=UTF-8")
+    @PostMapping
     @RequestMapping("/add-a-car")
     public String addCar(CarDto body) {
         System.out.println("Add car:" + body.toString());
@@ -47,7 +46,7 @@ public class CarController {
         return "redirect:/successfully";
     }
 
-   @GetMapping("/view-cars")
+    @GetMapping("/view-cars")
     public ModelAndView showAllCars() {
         return new ModelAndView(
                 "view-cars",
@@ -59,9 +58,16 @@ public class CarController {
     public ModelAndView showAllCars(@RequestParam(defaultValue = "0") int page,
                                     @RequestParam(defaultValue = "100") int size) {
         List<Car> allCars = carService.findAllCarsWithPagination(page, size);
+        return new ModelAndView(
+                "view-cars",
+                Map.of("cars", allCars)
+        );
+    }
 
-
-
+    @GetMapping("/getCarsWithPaginationByPrice")
+    public ModelAndView showAllCarsByPrice(@RequestParam(defaultValue = "0") int page,
+                                    @RequestParam(defaultValue = "100") int size) {
+        List<Car> allCars = carService.findAllCarsWithPaginationSortByPrice(page, size);
         return new ModelAndView(
                 "view-cars",
                 Map.of("cars", allCars)

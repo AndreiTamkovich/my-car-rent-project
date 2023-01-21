@@ -22,6 +22,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/add-a-car").hasRole("ADMIN")
+                .antMatchers("/delete-a-car").hasRole("ADMIN")
+                .antMatchers("/view-cars").hasAnyRole("ADMIN","USER")
+                .antMatchers("/add-a-user").hasRole("ADMIN")
+                .antMatchers("/delete-a-user").hasRole("ADMIN")
+                .antMatchers("/view-users").hasRole("ADMIN")
+                .antMatchers("/add-a-order").hasAnyRole("ADMIN","USER")
+                .antMatchers("/delete-a-order").hasRole("ADMIN")
+                .antMatchers("/view-orders").hasRole("ADMIN")
+                .antMatchers("/add-a-payment").hasRole("ADMIN")
+                .antMatchers("/delete-a-payment").hasRole("ADMIN")
+                .antMatchers("/view-payments").hasAnyRole("ADMIN","USER")
                 .and()
                 .csrf().disable()
                 .formLogin();

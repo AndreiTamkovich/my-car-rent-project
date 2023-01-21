@@ -47,4 +47,10 @@ public class CarService {
         Page<Car> all = carRepository.findAll(pagination);
         return all.getContent();
     }
+
+    public List<Car> findAllCarsWithPaginationSortByPrice(int page, int size) {
+        Pageable pagination = PageRequest.of(page, size, Sort.by("rentalPrice"));
+        Page<Car> all = carRepository.findAll(pagination);
+        return all.getContent();
+    }
 }
