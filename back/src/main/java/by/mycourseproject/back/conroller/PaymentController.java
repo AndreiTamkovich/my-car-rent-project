@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -20,9 +23,10 @@ public class PaymentController {
     }
 
     @GetMapping("/view-payments")
-    public String showAllPaymentsPage() {
-        System.out.println("Call show all payments page");
-        return "view-payments";
+    public ModelAndView showAllPayments() {
+        return new ModelAndView(
+                "view-payments",
+                Map.of("payments", paymentService.findAllPayments()));
     }
 
     @GetMapping("/delete-a-payment")
@@ -46,11 +50,4 @@ public class PaymentController {
     }
 
 
-/*    @GetMapping("/view-payments")
-    public ModelAndView showAllPayments() {
-        return new ModelAndView(
-                "view-payments",
-                Map.of("payments", paymentService.findAllPayments())
-        );
-    }*/
 }
