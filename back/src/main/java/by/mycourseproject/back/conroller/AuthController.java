@@ -1,7 +1,7 @@
 package by.mycourseproject.back.conroller;
 
-import by.mycourseproject.back.service.AuthService;
 import by.mycourseproject.back.dto.UserDto;
+import by.mycourseproject.back.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,10 +29,8 @@ public class AuthController {
 
     @PostMapping
     @RequestMapping("/validation")
-    public String validation (@RequestBody UserDto dto) {
-
+    public String validation(@RequestBody UserDto dto) {
         boolean b = service.loginValidation(dto);
-
         return b ? "redirect:/succesfully" : "redirect:/error";
     }
 
@@ -40,8 +38,6 @@ public class AuthController {
     @PostMapping
     @RequestMapping("/registration")
     public String registration() {
-
-
         return "redirect:/succesfully";
     }
 }

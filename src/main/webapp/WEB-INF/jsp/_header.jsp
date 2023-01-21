@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -62,8 +64,14 @@
                         <li><a class="dropdown-item" href="/delete-a-payment">Delete a payment</a></li>
                     </ul>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/login"><span
-                            style="color: green"> Login</span></a>
+                    <security:authorize access="isAuthenticated()">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/logout"><span
+                                style="color: red"> Logout</span></a></a>
+                    </security:authorize>
+                    <security:authorize access="!isAuthenticated()">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/login"><span
+                                style="color: green"> Login</span></a>
+                    </security:authorize>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/about"><span
