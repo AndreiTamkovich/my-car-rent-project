@@ -6,9 +6,9 @@
         <div class="col-8">
             <div class="btn-group me-2" role="group" aria-label="Page group">
                 <c:choose>
-                    <c:when test="${data.metadata.page < 3}">
-                        <c:if test="${data.metadata.page > 0}">
-                            <c:forEach begin="1" end="${data.metadata.page - 1}" var="p">
+                    <c:when test="${page < 3}">
+                        <c:if test="${page > 0}">
+                            <c:forEach begin="1" end="${page - 1}" var="p">
                                 <button type="submit" name="page" value="${p}" class="btn btn-light">${p + 1}</button>
                             </c:forEach>
                         </c:if>
@@ -17,23 +17,23 @@
                         <button type="submit" name="page" value="0" class="btn btn-light">First Page</button>
                     </c:otherwise>
                 </c:choose>
-                <button type="submit" name="page" value="${data.metadata.page}"
-                        class="btn btn-light active">${data.metadata.page + 1}</button>
+                <button type="submit" name="page" value="${page}"
+                        class="btn btn-light active">${page + 1}</button>
                 <c:choose>
-                    <c:when test="${data.metadata.page + 3 >= data.metadata.totalPages}">
-                        <c:forEach begin="${data.metadata.page + 2}" end="${data.metadata.totalPages}" var="p">
+                    <c:when test="${page + 3 >= totalPages}">
+                        <c:forEach begin="${page + 2}" end="${totalPages}" var="p">
                             <button type="submit" name="page" value="${p - 1}" class="btn btn-light">${p}</button>
                         </c:forEach>
                     </c:when>
                     <c:otherwise>
-                        <button type="submit" name="page" value="${data.metadata.page + 1}"
-                                class="btn btn-light">${data.metadata.page + 2}</button>
+                        <button type="submit" name="page" value="${page + 1}"
+                                class="btn btn-light">${page + 2}</button>
                     </c:otherwise>
                 </c:choose>
             </div>
             <div class="btn-group me-2" role="group" aria-label="Next group">
                 <button type="submit" name="page"
-                        value="${data.metadata.page + 1 < data.metadata.totalPages ? data.metadata.page + 1 : data.metadata.totalPages}"
+                        value="${page + 1 < totalPages ? page + 1 : totalPages}"
                         class="btn btn-light">&raquo;
                 </button>
             </div>
