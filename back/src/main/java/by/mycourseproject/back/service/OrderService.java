@@ -12,6 +12,7 @@ import by.mycourseproject.back.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -54,9 +55,12 @@ public class OrderService {
     }
 
 
-    public void getOrdersByUser(String userName) {
+    public List<Order> getOrdersByUser(String userName) {
         User userByLogin = userRepository.getUserByLogin(userName);
+        return (List<Order>) orderRepository.findAllByUser(userByLogin.getId());
+    }
 
-        orderRepository.findAllByUser(userByLogin.getId());
+    public List<Order> findAll() {
+        return orderRepository.findAll();
     }
 }
