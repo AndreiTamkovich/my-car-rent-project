@@ -48,7 +48,7 @@ public class CarController {
     }
 
     @GetMapping("/viewCars")
-    public ModelAndView showAllCars() {
+    public ModelAndView showCars() {
         return new ModelAndView(
                 "view-cars",
                 Map.of("cars", carService.findAllCars())
@@ -56,14 +56,16 @@ public class CarController {
     }
 
     @GetMapping("/getCarsWithPagination")
-    public ModelAndView showAllCars(@RequestParam(defaultValue = "0") int page,
-                                    @RequestParam(defaultValue = "100") int size) {
+    public ModelAndView showEnableCars(@RequestParam(defaultValue = "0") int page,
+                                       @RequestParam(defaultValue = "100") int size) {
         List<Car> allCars = carService.findAllCarsWithPagination(page, size);
+        int pages = page + (int) Math.ceil(allCars.size() / size);
         return new ModelAndView(
                 "view-cars",
                 Map.of("cars", allCars,
                         "page", page,
-                        "size", size)
+                        "size", size,
+                        "totalPages", pages)
         );
     }
 
@@ -71,9 +73,13 @@ public class CarController {
     public ModelAndView showAllCarsByPrice(@RequestParam(defaultValue = "0") int page,
                                            @RequestParam(defaultValue = "100") int size) {
         List<Car> allCars = carService.findAllCarsWithPaginationSortByPrice(page, size);
+        int pages = page + (int) Math.ceil(allCars.size() / size);
         return new ModelAndView(
-                "view-cars",
-                Map.of("cars", allCars)
+                "view-cars-by-price",
+                Map.of("cars", allCars,
+                        "page", page,
+                        "size", size,
+                        "totalPages", pages)
         );
     }
 }

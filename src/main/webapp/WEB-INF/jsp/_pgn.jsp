@@ -1,9 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<form method="get" action="/car/getCarsWithPagination">
     <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
         <div class="col-8">
+            <div class="btn-group me-2" role="group" aria-label="Previous">
+                <button type="submit" name="page" value="${page > 0 ? page - 1 : 0}"
+                        class="btn btn-light"><<
+                </button>
+            </div>
             <div class="btn-group me-2" role="group" aria-label="Page group">
                 <c:choose>
                     <c:when test="${page < 3}">
@@ -13,9 +17,6 @@
                             </c:forEach>
                         </c:if>
                     </c:when>
-                    <c:otherwise>
-                        <button type="submit" name="page" value="0" class="btn btn-light">First Page</button>
-                    </c:otherwise>
                 </c:choose>
                 <button type="submit" name="page" value="${page}"
                         class="btn btn-light active">${page + 1}</button>
@@ -33,14 +34,14 @@
             </div>
             <div class="btn-group me-2" role="group" aria-label="Next group">
                 <button type="submit" name="page"
-                        value="${page + 1 < totalPages ? page + 1 : totalPages}"
-                        class="btn btn-light">&raquo;
+                        value="${page < totalPages ? page + 1 : totalPages}"
+                        class="btn btn-light">>>
                 </button>
             </div>
         </div>
         <div class="col-2">
             <div class="input-group me-2">
-                <div class="input-group-text" id="btnGroupAddon2">Page size:</div>
+                <div class="input-group-text" id="btnGroupAddon2">Size:</div>
                 <select class="form-select" name="size" id="validationCustom04" onchange="this.form.submit()">
                     <option value="${size}" selected>${size}</option>
                     <option value="1">1</option>

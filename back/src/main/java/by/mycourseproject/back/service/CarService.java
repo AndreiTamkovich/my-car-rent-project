@@ -53,4 +53,5 @@ public class CarService {
         Page<Car> all = carRepository.findAll(pagination);
         return all.getContent();
     }
+
 }

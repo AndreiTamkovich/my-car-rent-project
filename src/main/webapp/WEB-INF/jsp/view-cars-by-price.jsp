@@ -2,17 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="_header.jsp"/>
 <h1>
-    <div style="text-align: center;">View enable cars</div>
+    <div style="text-align: center;">View all cars by price</div>
 </h1>
 <br>
+<br>
 <form method="get" action="/car/getCarsWithPaginationByPrice">
-    <button type="submit"
-            class="btn btn-light">Show all cars by price
-    </button>
-</form>
-<br>
-<br>
-<form method="get" action="/car/getCarsWithPagination">
     <table style="width:100%" class="table">
         <tr>
             <th>ID</th>
