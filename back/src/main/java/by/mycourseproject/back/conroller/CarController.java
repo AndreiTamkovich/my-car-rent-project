@@ -16,22 +16,23 @@ import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/car")
 public class CarController {
     private final CarService carService;
 
-    @GetMapping("/add-a-car")
+    @GetMapping("/addCar")
     public String showAddACarPage() {
         System.out.println("Call add car page");
         return "add-a-car";
     }
 
-    @GetMapping("/delete-a-car")
+    @GetMapping("/deleteCar")
     public String showDeleteCarPageById() {
         return "delete-a-car";
     }
 
     @PostMapping
-    @RequestMapping("/add-a-car")
+    @RequestMapping("/addCar")
     public String addCar(CarDto body) {
         System.out.println("Add car:" + body.toString());
         carService.addCar(body);
@@ -39,14 +40,14 @@ public class CarController {
     }
 
     @PostMapping
-    @RequestMapping("/delete-a-car")
+    @RequestMapping("/deleteCar")
     public String deleteCar(Long id) {
         System.out.println("Delete car with id" + id);
         carService.deleteCar(id);
         return "redirect:/successfully";
     }
 
-    @GetMapping("/view-cars")
+    @GetMapping("/viewCars")
     public ModelAndView showAllCars() {
         return new ModelAndView(
                 "view-cars",

@@ -2,7 +2,7 @@
 <jsp:include page="_header.jsp"/>
 <h1>Edit or delete a car</h1>
 
-<form method="post" action="/delete-a-car">
+<form method="post" action="/car/deleteCar">
     <div class="mb-3">
         <label for="id" class="form-label">ID of car you want to delete:</label>
         <input type="number" name="id" class="form-control" id="id" required aria-describedby="markHelp">

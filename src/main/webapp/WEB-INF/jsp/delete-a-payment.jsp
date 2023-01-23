@@ -2,7 +2,7 @@
 <jsp:include page="_header.jsp"/>
 <h1>Edit or delete a payment </h1>
 
-<form method="post" action="/delete-a-payment">
+<form method="post" action="/payment/deletePayment">
   <div class="mb-3">
     <label for="id" class="form-label">ID of payment you want to delete:</label>
     <input type="number" name="id" class="form-control" id="id" required aria-describedby="deletePaymentHelp">

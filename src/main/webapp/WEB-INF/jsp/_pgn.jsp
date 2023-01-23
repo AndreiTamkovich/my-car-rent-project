@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<form method="get" action="/getCarsWithPagination">
+<form method="get" action="/car/getCarsWithPagination">
     <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
         <div class="col-8">
             <div class="btn-group me-2" role="group" aria-label="Page group">

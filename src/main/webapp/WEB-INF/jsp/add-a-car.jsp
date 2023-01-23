@@ -2,7 +2,7 @@
 <jsp:include page="_header.jsp"/>
 <h1>Add a new car</h1>
 
-<form method="post" action="/add-a-car">
+<form method="post" action="/car/addCar">
     <div class="mb-3">
         <label for="mark" class="form-label">Mark:</label>
         <input type="text" name="mark" class="form-control" id="mark" required aria-describedby="markHelp">

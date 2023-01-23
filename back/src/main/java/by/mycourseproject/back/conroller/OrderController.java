@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -18,7 +17,7 @@ public class OrderController {
     private final OrderService orderService;
     private final ContextCreator contextCreator;
 
-    @GetMapping("/add-a-order")
+    @GetMapping("/addOrder")
     public String showAddPaymentPage() {
         System.out.println("Call add a order page");
         return "add-a-order";
@@ -32,7 +31,7 @@ public class OrderController {
     }
 
     @PostMapping
-    @RequestMapping("/add-a-order")
+    @RequestMapping("/addOrder")
     public String getAllOrdersByUserId(OrderDto orderDto) {
         orderService.order(orderDto, contextCreator.getUserFromAuth());
         return "redirect:/successfully";

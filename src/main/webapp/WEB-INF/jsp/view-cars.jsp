@@ -5,7 +5,7 @@
     <div style="text-align: center;">View enable cars</div>
 </h1>
 <br>
-<form method="get" action="/getCarsWithPaginationByPrice">
+<form method="get" action="/car/getCarsWithPaginationByPrice">
     <button type="submit"
             class="btn btn-light">Show all cars by price
     </button>

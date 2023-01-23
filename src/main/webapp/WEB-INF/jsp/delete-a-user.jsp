@@ -2,7 +2,7 @@
 <jsp:include page="_header.jsp"/>
 <h1>Edit or delete a user</h1>
 
-<form method="post" action="/delete-a-user">
+<form method="post" action="/user/deleteUser">
   <div class="mb-3">
     <label for="id" class="form-label">ID of user you want to delete:</label>
     <input type="number" name="id" class="form-control" id="id" required aria-describedby="userDeleteHelp">

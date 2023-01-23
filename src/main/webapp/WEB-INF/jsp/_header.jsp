@@ -29,9 +29,9 @@
                         Cars
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/view-cars">View cars</a></li>
-                        <li><a class="dropdown-item" href="/add-a-car">Add a car</a></li>
-                        <li><a class="dropdown-item" href="/delete-a-car">Delete a car</a></li>
+                        <li><a class="dropdown-item" href="/car/viewCars">View cars</a></li>
+                        <li><a class="dropdown-item" href="/car/addCar">Add a car</a></li>
+                        <li><a class="dropdown-item" href="/car/deleteCar">Delete a car</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -39,9 +39,9 @@
                         Users
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/view-users">View users</a></li>
-                        <li><a class="dropdown-item" href="/add-a-user">Add a user</a></li>
-                        <li><a class="dropdown-item" href="/delete-a-user">Delete a user</a></li>
+                        <li><a class="dropdown-item" href="/user/viewUsers">View users</a></li>
+                        <li><a class="dropdown-item" href="/user/addUser">Add a user</a></li>
+                        <li><a class="dropdown-item" href="/user/deleteUser">Delete a user</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -49,9 +49,9 @@
                         Orders
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/order/view-orders">View orders</a></li>
-                        <li><a class="dropdown-item" href="/order/add-a-order">Add a order</a></li>
-                        <li><a class="dropdown-item" href="/order/Delete-a-order">Delete a order</a></li>
+                        <li><a class="dropdown-item" href="/order/viewOrders">View orders</a></li>
+                        <li><a class="dropdown-item" href="/order/addOrder">Add a order</a></li>
+                        <li><a class="dropdown-item" href="/order/deleteOrder">Delete a order</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -59,9 +59,9 @@
                         Payments
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/view-payments">View payments</a></li>
-                        <li><a class="dropdown-item" href="/add-a-payment">Add a payment</a></li>
-                        <li><a class="dropdown-item" href="/delete-a-payment">Delete a payment</a></li>
+                        <li><a class="dropdown-item" href="/payment/viewPayments">View payments</a></li>
+                        <li><a class="dropdown-item" href="/payment/addPayment">Add a payment</a></li>
+                        <li><a class="dropdown-item" href="/payment/deletePayment">Delete a payment</a></li>
                     </ul>
                 <li class="nav-item">
                     <security:authorize access="isAuthenticated()">

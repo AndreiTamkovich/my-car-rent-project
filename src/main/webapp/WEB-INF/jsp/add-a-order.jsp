@@ -2,7 +2,7 @@
 <jsp:include page="_header.jsp"/>
 <h1>Add a new order</h1>
 
-<form method="post" action="/order/add-a-order">
+<form method="post" action="/order/addOrder">
 
     <div class="mb-3">
         <label for="dateTo" class="form-label">Date To:</label>

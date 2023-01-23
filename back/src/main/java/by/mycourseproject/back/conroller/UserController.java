@@ -14,16 +14,17 @@ import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/add-a-user")
+    @GetMapping("/addUser")
     public String showAddUserPage() {
         System.out.println("Call a add user page");
         return "add-a-user";
     }
 
-    @GetMapping("/view-users")
+    @GetMapping("/viewUsers")
     public ModelAndView showAllCars() {
         return new ModelAndView(
                 "view-users",
@@ -31,13 +32,13 @@ public class UserController {
         );
     }
 
-    @GetMapping("/delete-a-user")
+    @GetMapping("/deleteUser")
     public String showDeleteUserPageById() {
         return "delete-a-user";
     }
 
     @PostMapping
-    @RequestMapping("/add-a-user")
+    @RequestMapping("/addUser")
     public String addUser(UserDto body) {
         System.out.println("Add user" + body.toString());
         userService.addUser(body);
@@ -46,7 +47,7 @@ public class UserController {
 
 
     @PostMapping
-    @RequestMapping("/delete-a-user")
+    @RequestMapping("/deleteUser")
     public String deleteUser(Long id) {
         userService.deleteUder(id);
         return "redirect:/successfully";

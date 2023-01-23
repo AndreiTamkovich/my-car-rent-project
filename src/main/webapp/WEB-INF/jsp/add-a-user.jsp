@@ -2,7 +2,7 @@
 <jsp:include page="_header.jsp"/>
 <h1>Add a new user</h1>
 
-<form method="post" action="/add-a-user">
+<form method="post" action="/user/addUser">
 
     <div class="mb-3">
         <label for="login" class="form-label">Login:</label>

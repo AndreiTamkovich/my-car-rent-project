@@ -2,7 +2,7 @@
 <jsp:include page="_header.jsp"/>
 <h1>Add a new payment</h1>
 
-<form method="post" action="/add-a-payment">
+<form method="post" action="/payment/addPayment">
 
     <div class="mb-3">
         <label for="paymentType" class="form-label">Payment Type:</label>

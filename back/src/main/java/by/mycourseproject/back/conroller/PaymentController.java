@@ -13,29 +13,30 @@ import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/payment")
 public class PaymentController {
     private final PaymentService paymentService;
 
-    @GetMapping("/add-a-payment")
+    @GetMapping("/addPayment")
     public String showAddPaymentPage() {
         System.out.println("Call add a payment page");
         return "add-a-payment";
     }
 
-    @GetMapping("/view-payments")
+    @GetMapping("/viewPayments")
     public ModelAndView showAllPayments() {
         return new ModelAndView(
                 "view-payments",
                 Map.of("payments", paymentService.findAllPayments()));
     }
 
-    @GetMapping("/delete-a-payment")
+    @GetMapping("/deletePayment")
     public String showDeletePaymentPageById() {
         return "delete-a-payment";
     }
 
     @PostMapping
-    @RequestMapping("/add-a-payment")
+    @RequestMapping("/addPayment")
     public String addPayment(PaymentDto body) {
         System.out.println("Add payment" + body.toString());
         paymentService.addPayment(body);
@@ -43,7 +44,7 @@ public class PaymentController {
     }
 
     @PostMapping
-    @RequestMapping("/delete-a-payment")
+    @RequestMapping("/deletePayment")
     public String deletePayment(Long id) {
         paymentService.deletePayment(id);
         return "redirect:/successfully";
