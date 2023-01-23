@@ -42,7 +42,7 @@
             <div class="input-group me-2">
                 <div class="input-group-text" id="btnGroupAddon2">Page size:</div>
                 <select class="form-select" name="size" id="validationCustom04" onchange="this.form.submit()">
-                    <option value="${data.metadata.size}" selected>${data.metadata.size}</option>
+                    <option value="${size}" selected>${size}</option>
                     <option value="1">1</option>
                     <option value="5">5</option>
                     <option value="10">10</option>

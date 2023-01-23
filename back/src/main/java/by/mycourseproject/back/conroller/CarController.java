@@ -61,7 +61,9 @@ public class CarController {
         List<Car> allCars = carService.findAllCarsWithPagination(page, size);
         return new ModelAndView(
                 "view-cars",
-                Map.of("cars", allCars)
+                Map.of("cars", allCars,
+                        "page", page,
+                        "size", size)
         );
     }
 
