@@ -3,6 +3,7 @@ package by.mycourseproject.back.conroller;
 import by.mycourseproject.back.context.ContextCreator;
 import by.mycourseproject.back.dto.OrderDto;
 import by.mycourseproject.back.entity.Order;
+import by.mycourseproject.back.entity.User;
 import by.mycourseproject.back.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -29,12 +30,19 @@ public class OrderController {
     }
 
     @GetMapping("/viewOrders")
-    public ModelAndView getAllOrdersByUserId() {
-        String userName = contextCreator.getUserFromAuth();
+    public ModelAndView getAllOrders() {
+        contextCreator.getUserFromAuth();
         return new ModelAndView(
-                "view-orders-by-users",
-                Map.of("orders", orderService.getOrdersByUser(userName),
-                        "users", userName));
+                "view-orders",
+                Map.of("orders", orderService.findAll()));
+    }
+
+    @GetMapping("/viewOrdersByUser")
+    public ModelAndView getAllOrdersByUser() {
+        String login = contextCreator.getUserFromAuth();
+        return new ModelAndView(
+                "view-orders-by-user",
+                Map.of("orders", orderService.getOrdersByUser(login)));
     }
 
     @PostMapping

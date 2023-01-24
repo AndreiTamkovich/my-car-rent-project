@@ -15,4 +15,6 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     Page<Car> findAll(Pageable pageable);
 
     void deleteById(Long id);
+
+    Car findCarsByModel(String model);
 }

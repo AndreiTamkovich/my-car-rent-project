@@ -1,6 +1,7 @@
 package by.mycourseproject.back.repository;
 
 import by.mycourseproject.back.entity.Order;
+import by.mycourseproject.back.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +14,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     List<Order> findAll();
 
-    List<Order> findAllByUser(long userId);
+    List<Order> findAllByUserLogin(String login);
 
 
 }

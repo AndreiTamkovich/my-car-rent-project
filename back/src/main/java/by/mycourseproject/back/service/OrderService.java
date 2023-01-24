@@ -31,6 +31,7 @@ public class OrderService {
         boolean res = false;
         Order order = new Order();
         Optional<Car> car = carRepository.findById(dto.getCarId());
+        //Optional<Car> carByModel = carRepository.findCarsByModel();
         User userByLogin = userRepository.getUserByLogin(userName);
         if (car.isPresent()) {
             car.get().setStatus("DISABLE");
@@ -55,9 +56,8 @@ public class OrderService {
     }
 
 
-    public List<Order> getOrdersByUser(String userName) {
-        User userByLogin = userRepository.getUserByLogin(userName);
-        return (List<Order>) orderRepository.findAllByUser(userByLogin.getId());
+    public List<Order> getOrdersByUser(String login) {
+        return (List<Order>) orderRepository.findAllByUserLogin(login);
     }
 
     public List<Order> findAll() {

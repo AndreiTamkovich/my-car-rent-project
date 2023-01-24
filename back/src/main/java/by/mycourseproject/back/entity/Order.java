@@ -14,7 +14,9 @@ public class Order {
     @GenericGenerator(name = "generator", strategy = "increment")
     @GeneratedValue(generator = "generator")
     private long id;
+    @Temporal(TemporalType.DATE)
     private Date dateTo;
+    @Temporal(TemporalType.DATE)
     private Date dateFrom;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PAYMENT_ID")

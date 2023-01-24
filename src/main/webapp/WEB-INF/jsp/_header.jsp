@@ -49,7 +49,8 @@
                         Orders
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/order/viewOrders">View orders</a></li>
+                        <li><a class="dropdown-item" href="/order/viewOrders">View all orders</a></li>
+                        <li><a class="dropdown-item" href="/order/viewOrdersByUser">View my orders</a></li>
                         <li><a class="dropdown-item" href="/order/addOrder">Add a order</a></li>
                         <li><a class="dropdown-item" href="/order/deleteOrder">Delete a order</a></li>
                     </ul>
