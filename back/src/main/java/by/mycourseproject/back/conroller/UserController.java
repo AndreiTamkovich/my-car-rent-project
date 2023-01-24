@@ -49,7 +49,7 @@ public class UserController {
     @PostMapping
     @RequestMapping("/deleteUser")
     public String deleteUser(Long id) {
-        userService.deleteUder(id);
+        userService.deleteUser(id);
         return "redirect:/successfully";
     }
 }

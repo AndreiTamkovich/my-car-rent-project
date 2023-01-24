@@ -11,6 +11,7 @@ import by.mycourseproject.back.repository.PaymentRepository;
 import by.mycourseproject.back.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -63,4 +64,9 @@ public class OrderService {
     public List<Order> findAll() {
         return orderRepository.findAll();
     }
+
+    public void deleteOrder(@RequestBody Long id) {
+        orderRepository.deleteById(id);
+    }
+
 }

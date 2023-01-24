@@ -16,5 +16,8 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     List<Order> findAllByUserLogin(String login);
 
+    void deleteById(Long id);
+
+
 
 }

@@ -51,4 +51,16 @@ public class OrderController {
         orderService.order(orderDto, contextCreator.getUserFromAuth());
         return "redirect:/successfully";
     }
+
+    @GetMapping("/deleteOrder")
+    public String showDeleteOrderPageById() {
+        return "delete-a-order";
+    }
+
+    @PostMapping
+    @RequestMapping("/deleteOrder")
+    public String deleteOrder(Long id) {
+        orderService.deleteOrder(id);
+        return "redirect:/successfully";
+    }
 }
