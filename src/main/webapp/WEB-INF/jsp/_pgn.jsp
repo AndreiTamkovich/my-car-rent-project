@@ -21,8 +21,8 @@
                 <button type="submit" name="page" value="${page}"
                         class="btn btn-light active">${page + 1}</button>
                 <c:choose>
-                    <c:when test="${page + 3 >= totalPages}">
-                        <c:forEach begin="${page + 2}" end="${totalPages}" var="p">
+                    <c:when test="${page + 3 >= allPages}">
+                        <c:forEach begin="${page + 2}" end="${allPages}" var="p">
                             <button type="submit" name="page" value="${p - 1}" class="btn btn-light">${p}</button>
                         </c:forEach>
                     </c:when>
@@ -34,7 +34,7 @@
             </div>
             <div class="btn-group me-2" role="group" aria-label="Next group">
                 <button type="submit" name="page"
-                        value="${page < totalPages ? page + 1 : totalPages}"
+                        value="${page < allPages ? page + 1 : allPages}"
                         class="btn btn-light">>>
                 </button>
             </div>

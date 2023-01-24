@@ -17,6 +17,8 @@ INSERT INTO t_user (id, login, password, email, role)
 VALUES (1, 'root', 'root', 'root@example.com', 'ADMIN');
 INSERT INTO t_user (id, login, password, email, role)
 VALUES (2, 'test', 'test', 'test@example.com', 'USER');
+INSERT INTO t_user (id, login, password, email, role)
+VALUES (3, 'apiadmin', 'apiadmin', 'api@example.com', 'API');
 
 ---Payments---
 INSERT INTO t_payment (id, currency, payment_type)

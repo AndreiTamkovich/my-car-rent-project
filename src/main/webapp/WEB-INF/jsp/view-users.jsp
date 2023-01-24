@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="_header.jsp"/>
 <h1>
-    <div style="text-align: center;">View users</div>
+    <div style="text-align: center;">Users</div>
 </h1>
 
 <%--<c:if test="${empty users }">

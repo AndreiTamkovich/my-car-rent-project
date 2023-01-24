@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="_header.jsp"/>
 <h1>
-    <div style="text-align: center;">View enable cars</div>
+    <div style="text-align: center;">Enable cars</div>
 </h1>
 <br>
 <form method="get" action="/car/getCarsWithPaginationByPrice">

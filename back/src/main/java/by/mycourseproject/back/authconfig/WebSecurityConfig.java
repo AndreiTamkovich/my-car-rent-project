@@ -38,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/payment/addPayment").hasRole("ADMIN")
                 .antMatchers("/payment/deletePayment").hasRole("ADMIN")
                 .antMatchers("/payment/viewPayments").hasAnyRole("ADMIN", "USER")
+                .antMatchers("/api/**").hasRole("API")
                 .and()
                 .formLogin();
     }

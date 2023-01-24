@@ -59,7 +59,7 @@ public class CarController {
     @GetMapping("/getCarsWithPagination")
     public ModelAndView showEnableCars(@RequestParam(defaultValue = "0") int page,
                                        @RequestParam(defaultValue = "100") int size) {
-        List<Car> allCars = carService.findAllCarsWithPagination(page, size).stream().filter(x -> x.getStatus().equals("ENABLE")).collect(Collectors.toList());
+        List<Car> allCars = carService.findAllCarsWithPagination(page, size);
         int pages = page + (int) Math.ceil(allCars.size() / size);
         return new ModelAndView(
                 "view-cars",
@@ -80,7 +80,7 @@ public class CarController {
                 Map.of("cars", allCars,
                         "page", page,
                         "size", size,
-                        "totalPages", pages)
+                        "allPages", pages)
         );
     }
 }

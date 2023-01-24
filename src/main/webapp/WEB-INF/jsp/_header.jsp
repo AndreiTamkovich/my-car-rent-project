@@ -24,54 +24,82 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/welcome">Home</a>
                 <li class="nav-item dropdown">
+                    <security:authorize access="hasAnyRole('ADMIN','USER')">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Cars
                     </a>
+                    </security:authorize>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/car/viewCars">View cars</a></li>
-                        <li><a class="dropdown-item" href="/car/addCar">Add a car</a></li>
-                        <li><a class="dropdown-item" href="/car/deleteCar">Delete a car</a></li>
+                        <security:authorize access="hasAnyRole('ADMIN')">
+                            <li><a class="dropdown-item" href="/car/addCar">Add a car</a></li>
+                            <li><a class="dropdown-item" href="/car/deleteCar">Delete a car</a></li>
+                        </security:authorize>
                     </ul>
                 <li class="nav-item dropdown">
+                    <security:authorize access="hasAnyRole('ADMIN')">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Users
                     </a>
+                    </security:authorize>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/user/viewUsers">View users</a></li>
                         <li><a class="dropdown-item" href="/user/addUser">Add a user</a></li>
                         <li><a class="dropdown-item" href="/user/deleteUser">Delete a user</a></li>
                     </ul>
                 <li class="nav-item dropdown">
+                    <security:authorize access="hasAnyRole('ADMIN','USER')">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Orders
                     </a>
+                    </security:authorize>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/order/viewOrders">View all orders</a></li>
+                        <security:authorize access="hasAnyRole('ADMIN')">
+                            <li><a class="dropdown-item" href="/order/viewOrders">View all orders</a></li>
+                        </security:authorize>
                         <li><a class="dropdown-item" href="/order/viewOrdersByUser">View my orders</a></li>
                         <li><a class="dropdown-item" href="/order/addOrder">Add a order</a></li>
-                        <li><a class="dropdown-item" href="/order/deleteOrder">Delete a order</a></li>
+                        <security:authorize access="hasAnyRole('ADMIN')">
+                            <li><a class="dropdown-item" href="/order/deleteOrder">Delete a order</a></li>
+                        </security:authorize>
                     </ul>
                 <li class="nav-item dropdown">
+                    <security:authorize access="hasAnyRole('ADMIN','USER')">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
                         Payments
                     </a>
+                    </security:authorize>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/payment/viewPayments">View payments</a></li>
-                        <li><a class="dropdown-item" href="/payment/addPayment">Add a payment</a></li>
-                        <li><a class="dropdown-item" href="/payment/deletePayment">Delete a payment</a></li>
+                        <security:authorize access="hasAnyRole('ADMIN')">
+                            <li><a class="dropdown-item" href="/payment/addPayment">Add a payment</a></li>
+                            <li><a class="dropdown-item" href="/payment/deletePayment">Delete a payment</a></li>
+                        </security:authorize>
                     </ul>
                 <li class="nav-item">
                     <security:authorize access="isAuthenticated()">
                         <a class="nav-link" href="${pageContext.request.contextPath}/logout"><span
-                                style="color: red"> Logout</span></a></a>
+                                style="color: red"> Logout</span></a>
                     </security:authorize>
                     <security:authorize access="!isAuthenticated()">
                         <a class="nav-link" href="${pageContext.request.contextPath}/login"><span
                                 style="color: green"> Login</span></a>
+                    </security:authorize>
+                </li>
+                <li class="nav-item dropdown">
+                    <security:authorize access="hasAnyRole('API')">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            <span style="color: yellow"> API</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/api/getCars">Api get cars</a></li>
+                            <li><a class="dropdown-item" href="/api/getUsers">Api get users</a></li>
+                            <li><a class="dropdown-item" href="/api/getPayments">Api get payments</a></li>
+                        </ul>
                     </security:authorize>
                 </li>
                 <li class="nav-item">

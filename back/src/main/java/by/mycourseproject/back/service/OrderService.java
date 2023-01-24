@@ -35,23 +35,17 @@ public class OrderService {
         //Optional<Car> carByModel = carRepository.findCarsByModel();
         User userByLogin = userRepository.getUserByLogin(userName);
         if (car.isPresent()) {
-            car.get().setStatus("DISABLE");
+            car.get().setStatus("Disable");
             order.setCar(car.get());
             res = true;
         }
-
-
         order.setDateFrom(dto.getDateFrom());
         order.setDateTo(dto.getDateTo());
         order.setUser(userByLogin);
 
         Payment byId = paymentRepository.getById(dto.getPaymentId());
-
         order.setPayment(byId);
-
-
         orderRepository.save(order);
-
         userRepository.save(userByLogin);
         return res;
     }
