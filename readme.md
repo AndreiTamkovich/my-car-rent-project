@@ -19,11 +19,8 @@ In addition, the possibility of functionality is limited depending on the role o
 Authorization data:
 
 default (without authorization)
-
 admin - login: root, password: root
-
 user  - login: test, password: test
-
 API   - login: apiadmin, password: apiadmin
 
 
@@ -31,22 +28,12 @@ API   - login: apiadmin, password: apiadmin
 The following technologies were used in the project:
 
 • Java 11 
-
 • Spring 
-
 • Hibernate 
-
 • Maven 
-
 • Git/Github 
-
 • Maven 
-
 • H2 
-
 • REST Controller 
-
 • Spring Security 
-
 • Spring Boot 
-
